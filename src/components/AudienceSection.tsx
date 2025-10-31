@@ -42,7 +42,7 @@ const AudienceSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <section id="audience" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -52,33 +52,41 @@ const AudienceSection = () => {
             Empowering the entire education ecosystem in Nigeria
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {audiences.map((audience, index) => (
-            <Card 
+            <Card
               key={index}
               className="group relative overflow-hidden border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-card bg-card"
             >
-              <div className={`absolute top-0 left-0 right-0 h-2 bg-gradient-to-r ${audience.gradient}`} />
-              
+              <div
+                className={`absolute top-0 left-0 right-0 h-2 bg-gradient-to-r ${audience.gradient}`}
+              />
+
               <div className="p-8">
-                <div className={`inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br ${audience.gradient} text-primary-foreground mb-6 shadow-glow`}>
+                <div
+                  className={`inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br ${audience.gradient} text-primary-foreground mb-6 shadow-glow`}
+                >
                   {audience.icon}
                 </div>
-                
+
                 <h3 className="text-2xl font-bold text-card-foreground mb-4">
                   {audience.title}
                 </h3>
-                
+
                 <p className="text-muted-foreground mb-6 leading-relaxed">
                   {audience.description}
                 </p>
-                
+
                 <div className="space-y-3">
                   {audience.benefits.map((benefit, idx) => (
                     <div key={idx} className="flex items-start gap-2">
-                      <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-br ${audience.gradient} mt-2 flex-shrink-0`} />
-                      <span className="text-sm text-muted-foreground">{benefit}</span>
+                      <div
+                        className={`w-1.5 h-1.5 rounded-full bg-gradient-to-br ${audience.gradient} mt-2 flex-shrink-0`}
+                      />
+                      <span className="text-sm text-muted-foreground">
+                        {benefit}
+                      </span>
                     </div>
                   ))}
                 </div>

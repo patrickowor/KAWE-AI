@@ -1,8 +1,11 @@
 import { MessageCircle, CheckCircle, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { WHATSAPP_URL } from "@/utils/constants";
+import { useExternalNav } from "@/utils/use-externNav";
 
 const WhatsAppCTA = () => {
+  const navigate = useExternalNav();
   return (
     <section className="py-20 bg-gradient-to-br from-secondary/10 via-background to-primary/10 relative overflow-hidden">
       {/* Decorative Elements */}
@@ -55,6 +58,7 @@ const WhatsAppCTA = () => {
             <Button 
               size="lg"
               className="bg-gradient-to-r from-secondary to-secondary/90 text-secondary-foreground hover:shadow-whatsapp text-xl px-12 py-8 h-auto transition-all hover:scale-105 font-bold border-2 border-secondary-foreground/20"
+              onClick={() => navigate(WHATSAPP_URL)}
             >
               <MessageCircle className="w-7 h-7 mr-3 fill-secondary-foreground" />
               Open WhatsApp & Start Learning

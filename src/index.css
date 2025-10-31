@@ -23,6 +23,8 @@ All colors MUST be HSL.
     --secondary: 142 70% 40%;
     --secondary-foreground: 0 0% 100%;
 
+    --secondary-other: 142 70% 45%;
+
     --muted: 210 40% 96%;
     --muted-foreground: 215 16% 47%;
 
@@ -92,4 +94,21 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
 }
